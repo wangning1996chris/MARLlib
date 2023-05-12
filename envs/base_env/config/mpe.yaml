@@ -3,7 +3,7 @@ env: mpe
 env_args:
   map_name: "mapd_small_3a" # others can be found in mpe.py
   continuous_actions: False
-  max_cycles: 25
+  max_cycles: 200
 
 mask_flag: False
 global_state_flag: False

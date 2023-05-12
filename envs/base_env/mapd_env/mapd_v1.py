@@ -5,7 +5,7 @@ import os
 
 
 class raw_env(SimpleEnv):
-    def __init__(self, max_cycles=50, continuous_actions=False):
+    def __init__(self, max_cycles=50, continuous_actions=True):
         scenario = Scenario()
         world = scenario.make_world(N=3)
         super().__init__(scenario, world, max_cycles, continuous_actions)
