@@ -4,8 +4,10 @@ import supersuit as ss
 from ray.rllib.env import PettingZooEnv, ParallelPettingZooEnv
 from pettingzoo.mpe import simple_adversary_v2, simple_crypto_v2, simple_v2, simple_push_v2, simple_tag_v2, \
     simple_spread_v2, simple_reference_v2, simple_world_comm_v2, simple_speaker_listener_v3
+from envs.base_env.mapd_env import mapd_v1
 
 REGISTRY = {}
+REGISTRY["mapd_small_3a"] = mapd_v1.parallel_env
 REGISTRY["simple_adversary"] = simple_adversary_v2.parallel_env
 REGISTRY["simple_crypto"] = simple_crypto_v2.parallel_env
 REGISTRY["simple_push"] = simple_push_v2.parallel_env
@@ -16,6 +18,12 @@ REGISTRY["simple_world_comm"] = simple_world_comm_v2.parallel_env
 REGISTRY["simple_speaker_listener"] = simple_speaker_listener_v3.parallel_env
 
 policy_mapping_dict = {
+    "mapd_small_3a": {
+        "description": "one team cooperate",
+        "team_prefix": ("agent_",),
+        "all_agents_one_policy": True,
+        "one_agent_one_policy": True,
+    },
     "simple_adversary": {
         "description": "one team attack, one team survive",
         "team_prefix": ("adversary_", "agent_"),

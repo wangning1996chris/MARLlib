@@ -1,7 +1,7 @@
 env: mpe
 
 env_args:
-  map_name: "simple_adversary" # others can be found in mpe.py
+  map_name: "mapd_small_3a" # others can be found in mpe.py
   continuous_actions: False
   max_cycles: 25
 
