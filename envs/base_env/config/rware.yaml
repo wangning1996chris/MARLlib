@@ -1,16 +1,17 @@
 env: rware
 
 env_args:
+  map_name: rware-v1
   n_agents: 2 # 2-20
-  map_size: "tiny" # "tiny", "small", "medium", "large"
+  map_size: "medium" # "tiny", "small", "medium", "large"
   difficulty: "medium" # "easy", "medium", "hard"
   column_height: 1
-  max_inactivity_steps: null
+  max_inactivity_steps: 500
   max_steps: 500
   fast_obs: True
-  msg_bits: 0
-  sensor_range: 1
+  msg_bits: 1
+  sensor_range: 3
 
 mask_flag: False
 global_state_flag: False
-opp_action_in_cc: True
+opp_action_in_cc: False
